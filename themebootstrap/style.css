@@ -1,0 +1,13 @@
+/*police*/
+p,h1,h2,h3,h4,h5,h6,a,span,label,input,textarea,li,ul,blockquote, address,td,legend,button,select,dt,dd {
+	font-family: 'Varela', sans-serif;
+}
+
+
+p{
+	font-size: 16px;
+}
+
+.navbar {
+	margin-bottom: 50px;
+}
