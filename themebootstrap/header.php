@@ -22,13 +22,15 @@
 	
 	<body id="body">
 	
-	<div class="jumbotron">
-		<div id="logo" class="container">
-			<a href="-"><img style="width: 50px;"src="themeBootstrap/images/cd.jpg" alt="cd" /></a>
-		</div>
-	  <div class="container">
-	    <h1>NON ASCENDAM</h1>
-	    <p>La Culture Sans les yeux, Avec le Quo</p>
-	  
-	</div>
+	<header>
+				<a aria-live="assertive" href="-"><img style="width: 100px;"src="themeGrid/images/cd.png" alt="cd_retour_page_accueil" /></a>
+				<form class="form-inline pull-right" action="search" method="post">
+					<input aria-live="assertive" class="input-sm form-control" placeholder="Recherche" type="text" name="s" id="s"/>
+					  <button type="submit" class="btn-custom"><span class="glyphicon glyphicon-search"></span></button>
+				</form>
+			    <h1>NON ASCENDAM</h1>
+			    <p>La Culture Sans les yeux, Avec le Quo</p>
+			    
+		    </header>
+
 	
