@@ -58,6 +58,20 @@ function updatePost(PDO $pdo, $data) {
 	$req->execute(array(':titre'=>$titre, ':extrait'=>$extrait, ':texte'=>$texte, ':id'=>$id));
 }
 
+/*fonctions pour search
+---------------------------------------------------
+*/
+
+//fonction search
+function getSearch(PDO $pdo, $s) {
+	$sql = ("SELECT Pages.id AS id, Pages.titre AS titre, Pages.texte AS texte, Pages.url AS url, Pages.type AS type FROM Pages WHERE MATCH(titre, texte) AGAINST ('.$s.')
+	UNION
+	SELECT Articles.id, Articles.titre, Articles.extrait, Articles.url, Articles.type  FROM Articles WHERE MATCH(titre, texte) AGAINST ('.$s.')");
+	$result =$pdo->query($sql);
+	return $result->fetchAll();
+}
+
+
 
 /*fonctions pour affichages des posts en front end
 ---------------------------------------------------
