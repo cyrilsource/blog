@@ -14,8 +14,21 @@ if (!empty($_POST['s']))  {
 	
 	include('header.php');
 	
+	 // on teste si le tableau $search conttien bien des entrées pour afficher un message d'echec de la recherche
+	if (count($searchs) == 0) { ?>
+		
+		<section>
+			<h4>nous n'avons pas trouvé de résultat correspondant à votre recherche</h4>
+			<a href="-"><p>Retour à l'accueil</p></a>
+		</section>
+		
+	<?php	
+	}
+	else {
+		
 	
-	foreach ($searchs as $search){
+		foreach ($searchs as $search){
+	
 		?>
 		<div class="content">
 		<!-- on teste ici si c'est un article ou une page pour attribuer les bon url -->
@@ -31,12 +44,10 @@ if (!empty($_POST['s']))  {
 			<?php $texte = substr($search['texte'], 0,140) ?>
 			<p><?php echo($texte) ?></p><a href="<?php echo($search['url']); ?>-<?php echo($search['id']); ?>"><p>lire la suite</p></a>	
 			<?php } ?>
-			
-			
-			
 		</div>
 		
-	<?php	
+	<?php
+		}	
 	}
 
 	include('footer.php');
